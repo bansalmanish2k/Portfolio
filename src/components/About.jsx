@@ -22,7 +22,7 @@ const About = () => {
             <strong>Full Stack Developer</strong> based in <strong>India</strong>
           </p>
 
-          <a href="/Manish_Bansal_CV.pdf" download className={styles['download-btn']}>
+          <a href="/Manish_Resume (1).pdf" download className={styles['download-btn']}>
             Download Resume 
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M7 17L17 7M17 7H7M17 7V17" />

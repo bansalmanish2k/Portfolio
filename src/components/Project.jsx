@@ -24,7 +24,7 @@ const projectsData = [
     title: "Personal Portfolio",
     desc: "A responsive and visually appealing portfolio website to showcase technical skills, projects, and achievements.",
     image: "/Portfolio.png", // Loading directly from your public folder
-    link: "#"
+    link: "https://manishportfolio-virid.vercel.app/"
   }
 ];
 
