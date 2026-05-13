@@ -1,0 +1,29 @@
+/* --- DESKTOP VIEW --- */
+.logoLink {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logoImage {
+    width: 100%;
+    max-width: 180px; /* Prevents the logo from getting massively huge on 4k screens */
+    height: auto;     /* CRITICAL: Maintains your logo's natural aspect ratio so it never squishes */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;   /* Centers the logo */
+    transition: transform 0.3s ease;
+}
+
+/* Adds a tiny interactive bounce when a user hovers over your logo */
+.logoImage:hover {
+    transform: scale(1.05); 
+}
+
+/* --- MOBILE & TABLET VIEW (< 900px) --- */
+@media (max-width: 900px) {
+    .logoImage {
+        max-width: 140px; /* Shrinks the logo width for smaller screens */
+        max-height: 45px; /* Limits the height so your mobile top-bar stays sleek and thin */
+        margin: 0;        /* Removes centering so it sits cleanly on the left side */
+    }
+}

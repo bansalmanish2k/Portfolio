@@ -1,0 +1,127 @@
+/* --- DESKTOP VIEW (Default) --- */
+.sidebar {
+    background-color: black;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    flex-direction: column;
+    
+    /* This keeps the sidebar fixed on screen while the right side scrolls! */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.mobileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hamburgerBtn {
+    display: none; /* Hidden on desktop */
+}
+
+.navMenu {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 50px;
+    gap: 15px;
+}
+
+.navBtn {
+    background-color: transparent; 
+    color: white;
+    border: 2px solid #333333;    
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 8px;            
+    cursor: pointer;              
+    transition: all 0.3s ease;
+    
+    /* Added to fix <Link> styling */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.navBtn:hover {
+    background-color: white;      
+    color: black;
+    border-color: white;
+    transform: translateY(-2px);   
+}
+
+.socialContainer {
+    margin-top: auto;       
+    display: flex;
+    gap: 20px;              
+    padding-bottom: 30px;   
+}
+
+.socialLink {
+    color: white;
+    font-size: 1.8rem;      
+    transition: all 0.3s ease;
+    display: flex;          
+}
+
+.socialLink:hover {
+    color: #61dafb;         
+    transform: scale(1.2);  
+}
+
+/* --- MOBILE & TABLET VIEW (< 900px) --- */
+@media (max-width: 900px) {
+    .sidebar {
+        min-height: auto; /* Removes the 100vh so it only takes up the top bar */
+        padding: 15px 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a nice shadow on mobile */
+    }
+
+    /* Turns the header into a horizontal bar */
+    .mobileHeader {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Show the hamburger menu icon */
+    .hamburgerBtn {
+        display: block;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* Hide the menu and socials by default on mobile */
+    .navMenu {
+        display: none; 
+        width: 100%;
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .socialContainer {
+        display: none;
+        margin-top: 20px;
+        padding-bottom: 10px;
+        justify-content: center;
+    }
+
+    /* When the state isMenuOpen is true, these classes show the items */
+    .navMenu.active {
+        display: flex;
+    }
+
+    .socialContainer.active {
+        display: flex;
+    }
+}

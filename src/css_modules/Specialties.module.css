@@ -1,0 +1,197 @@
+/* Container Setup */
+.specialties-section {
+  width: 100%;
+  padding: 40px 5%; /* Using 5% instead of 40px keeps it safely inside the screen */
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box; 
+  overflow-x: hidden; /* The ultimate horizontal scrollbar killer! */
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header-container {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-style: italic;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-top: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Accordion List */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 0;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.accordion-item:first-child {
+  border-top: 1px solid #eaeaea;
+}
+
+.accordion-item:hover .item-title {
+  color: #555;
+}
+
+/* Left: Title */
+.item-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Removed the fixed 250px min-width so it can shrink cleanly on tablets */
+}
+
+.bullet {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.item-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Middle: Content */
+.item-middle {
+  flex: 2;
+  padding-right: 5%; /* Switched to percentage */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out; 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.item-desc {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Right: Icon */
+.item-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 40px;
+  flex-shrink: 0; /* Prevents the icon from being squished */
+}
+
+.toggle-icon {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  line-height: 0.8;
+}
+
+/* ACTIVE STATE STYLES */
+.active .bullet {
+  background: linear-gradient(90deg, #ff7eb3, #ffb199);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active .item-title {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffb199);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN 
+   ========================================= */
+
+@media (max-width: 900px) {
+  .specialties-section {
+    padding: 60px 20px; 
+  }
+
+  .accordion-item {
+    flex-direction: column;
+    padding: 25px 0;
+    gap: 15px;
+  }
+
+  .item-left {
+    width: 100%;
+    justify-content: space-between; 
+  }
+
+  /* Move the plus/minus icon into the title row on mobile using CSS */
+  .item-right {
+    display: none; 
+  }
+  
+  .item-left::after {
+    content: '+';
+    font-size: 2rem;
+    font-weight: 300;
+    color: #1a1a1a;
+  }
+  
+  .active .item-left::after {
+    content: '−';
+    background: linear-gradient(90deg, #ff7eb3, #ffb199);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .item-middle {
+    flex: auto;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 25px; 
+  }
+}
+
+/* Small Phones (< 480px) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.2rem; 
+  }
+  
+  .item-title {
+    font-size: 1.1rem; 
+  }
+}

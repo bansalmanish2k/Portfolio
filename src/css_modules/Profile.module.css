@@ -1,0 +1,34 @@
+/* --- DESKTOP VIEW --- */
+.profile {
+    width: 100%;
+    max-width: 300px; /* Limits how big it can get on a large screen */
+    height: auto;     /* CRITICAL: Keeps your aspect ratio perfect so it doesn't stretch */
+    
+    /* Optional Polish: Makes it a nice circle with a soft shadow */
+    border-radius: 50%; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    transition: transform 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* --- MOBILE & TABLET VIEW (< 900px) --- */
+@media (max-width: 900px) {
+    .profile {
+        max-width: 200px; /* Shrinks the image to a better size for phones */
+    }
+}
+
+/* --- SMALL MOBILE VIEW (< 480px) --- */
+@media (max-width: 480px) {
+    .profile {
+        max-width: 150px; /* Shrinks it even further for very small screens */
+    }
+}

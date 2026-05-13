@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Only use 100%, never 100vw! */
+  overflow-x: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Vite/React wraps your whole app in this ID, so we need to lock it down too */
+#root {
+  width: 100%;
+  overflow-x: hidden; 
+}

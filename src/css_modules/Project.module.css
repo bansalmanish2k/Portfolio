@@ -1,0 +1,183 @@
+/* Container Setup */
+.project-section {
+  width: 100%;
+  padding: 20px 5%;
+  background-color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box; 
+  overflow-x: hidden; 
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+
+.subtitle {
+  font-style: italic;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 40px 40px; 
+}
+
+/* Individual Project Card */
+.project-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-decoration: none; 
+  color: inherit;
+  cursor: pointer;
+  box-sizing: border-box;
+  group: hover; 
+}
+
+/* Left Side: Typography */
+.card-left {
+  flex: 0 0 45%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-category {
+  font-style: italic;
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 0 8px 0;
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+}
+
+
+.project-desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.arrow-icon {
+  margin-top: 20px;
+  transition: transform 0.3s ease; 
+}
+
+/* Right Side: Image Container */
+.card-right {
+  flex: 1; 
+  overflow: hidden; 
+  border-radius: 6px; 
+}
+
+.project-image {
+  width: 100%;
+  height: 260px; 
+  object-fit: cover; 
+  transition: transform 0.5s ease; 
+  display: block; 
+}
+
+/* Hover Effects */
+.project-card:hover .arrow-icon {
+  transform: translate(5px, -5px); 
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05); 
+}
+
+
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Drops to 1 column */
+    gap: 50px;
+  }
+  
+  .project-image {
+    height: 300px; /* Make images a bit taller on tablet */
+  }
+  
+  .project-desc {
+    -webkit-line-clamp: 4; /* Allow more text on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-section {
+    padding: 60px 20px; 
+  }
+
+  .title {
+    font-size: 2.2rem; 
+  }
+
+  .project-card {
+    flex-direction: column; /* Stacks text on top of the image */
+    gap: 15px;
+  }
+  
+  .card-left, 
+  .card-right {
+    flex: none; 
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-desc {
+    -webkit-line-clamp: unset; /* Show full text on mobile */
+    margin-bottom: 15px;
+  }
+  
+  .arrow-icon {
+    display: none; /* Hide the big arrow on mobile */
+  }
+
+  .project-image {
+    height: 220px; 
+  }
+}
